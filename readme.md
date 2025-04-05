@@ -25,7 +25,7 @@ python main.py
 
 Demo:
 
-[🎥 Watch the Demo Video](https://github.com/XERO47/IITM_ASSIG_SOLVER/blob/a24a5da75949018f31203b8a4e65d51e40e2e8ff/assests/solver_demo.mp4)
+[🎥 Watch the Demo Video](assests/solver_demo.mp4)
 
 
 
