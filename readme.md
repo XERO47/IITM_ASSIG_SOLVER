@@ -1,5 +1,8 @@
-## **Solve all the question for IITM BS degree graded assigmensts.**
-Automatic solving.
+## **SolveQL.**
+
+#### **Solve all the question for IITM BS degree graded assigmensts.**
+
+**Automatic solving.**
 
 *How to start?*
 
