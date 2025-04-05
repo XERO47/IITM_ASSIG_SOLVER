@@ -24,6 +24,7 @@ python main.py
 ```
 
 Demo:
+
 <video controls src="assests/solver_demo.mp4" title="Title" ></video>
 
 All contributions are welcome.
