@@ -25,7 +25,8 @@ python main.py
 
 Demo:
 
-<video controls src="[./assests/solver_demo.mp4](https://github.com/XERO47/IITM_ASSIG_SOLVER/blob/a24a5da75949018f31203b8a4e65d51e40e2e8ff/assests/solver_demo.mp4)" title="Title" ></video>
+[🎥 Watch the Demo Video](https://github.com/XERO47/IITM_ASSIG_SOLVER/blob/a24a5da75949018f31203b8a4e65d51e40e2e8ff/assests/solver_demo.mp4)
+
 
 
 All contributions are welcome.
