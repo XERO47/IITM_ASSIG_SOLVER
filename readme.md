@@ -24,10 +24,9 @@ python main.py
 ```
 
 Demo:
-will be uploaded soon.
+<video controls src="assests/solver_demo.mp4" title="Title" ></video>
 
 All contributions are welcome.
-
 
 All answers will be in *answers.txt*
 
