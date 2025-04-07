@@ -53,20 +53,33 @@ llm = ChatGoogleGenerativeAI(model='gemini-2.0-flash', api_key=os.getenv("GEMINI
 
 async def main3(assigment_link):
     agent = Agent(
-        task=f"<context> Questions and Answers : {answers} </context> <task> go to {assigment_link}, and answer the questions. </task> ",
+        task=f"""<context> Questions and Answers : {answers} </context> 
+<task> 
+1. Go to {assigment_link}
+2. For each question:
+   - Wait for the page to load completely
+   - Scroll to view the entire question if needed
+   - Extract the question text and options
+   - Find the matching question in the context
+   - Select the correct answer from the options
+   - Format the output as:
+     Question X:
+     Question Text: [exact question text]
+     Options:
+     [option 1]
+     [option 2]
+     [option 3]
+     [option 4]
+     Answer: [selected answer]
+     Image Link: [URL if question has an image]
+3. After answering all questions, click the submit button
+</task>""",
         llm=llm,
         browser=browser,
-        # use_vision = True,
-        # use_vision_for_planner=  True,
         save_conversation_path="logs/conversation",
         max_failures=10,
         retry_delay=30,
         system_prompt_class=MySystemPrompt,
-        # message_context=f"{answers}",
-        # max_actions_per_step=10,
-
-        
-
     )
     await agent.run(max_steps=25)
     await browser.close()

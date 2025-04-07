@@ -1,0 +1,5 @@
+What is the time complexity of the given function **fun**? Image Link: https://backend.seek.onlinedegree.iitm.ac.in/21t3_cs2002/assets/img/W2PT2.png
+O(n)
+O(log⁡n)
+O(nlog⁡n)
+O(n2)

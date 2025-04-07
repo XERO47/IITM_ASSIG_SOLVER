@@ -1,0 +1,6 @@
+Select the correct recurrence relation and time complexity for the given code. T(n)=2T(n−2)+1T(n) = 2T(n-2)+1T(n)=2T(n−2)+1, O(n!)O(n!)O(n!) T(n)=2T(n/2)+nT(n) = 2T(n/2)+nT(n)=2T(n/2)+n, O(nlog⁡n)O(n\log{n})O(nlogn) T(n)=2T(n−1)+nT(n) = 2T(n-1)+nT(n)=2T(n−1)+n, O(2n)O(2^n)O(2n) T(n)=2T(n−1)+1T(n) = 2T(n-1)+1T(n)=2T(n−1)+1, O(2n)O(2^n)O(2n) T(n)=2T(n−1)+1T(n) = 2T(n-1)+1T(n)=2T(n−1)+1, O(n!)O(n!)O(n!) Image Link: https://backend.seek.onlinedegree.iitm.ac.in/21t3_cs2002/assets/img/W2PT1.png
+T(n)=2T(n−2)+1, O(n!)
+T(n)=2T(n/2)+n, O(nlog⁡n)
+T(n)=2T(n−1)+n, O(2n)
+T(n)=2T(n−1)+1, O(2n)
+T(n)=2T(n−1)+1, O(n!)

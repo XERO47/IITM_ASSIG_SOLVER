@@ -1,0 +1,5 @@
+Given below is a Python function to merge two sorted lists of integers. Function **mergeLists()** accepts two lists sorted in ascending order and returns a list which is also sorted in ascending order.  For list A of size **m** and list B of size **n**, what is the time complexity of the above algorithm? Image Link: https://backend.seek.onlinedegree.iitm.ac.in/21t3_cs2002/assets/img/W2PT5.png
+O(m),if  m>nO(n),if  m
+O(m+n)
+O(m∗n)
+O(log m+log n)

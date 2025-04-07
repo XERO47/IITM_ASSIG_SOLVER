@@ -1,0 +1,6 @@
+Let f(n)=5n3+n2+6n+2f(n) = 5n^3 + n^2 + 6n + 2f(n)=5n3+n2+6n+2.  . Which of the following is/are true?
+f(n) is O(n2)
+f(n) is O(n3)
+f(n) is Ω(n3)
+f(n) is θ(n3)
+f(n) is Ω(n4)

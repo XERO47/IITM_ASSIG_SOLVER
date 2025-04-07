@@ -1,0 +1,5 @@
+Below code-snippet is a non-recursive implementation of binary search in a sorted list of integers. Which of the options below complete the missing lines 13 and 15 in the above program respectively? Image Link: https://backend.seek.onlinedegree.iitm.ac.in/21t3_cs2002/assets/img/W2PT4.png
+right = mid + 1 **# line 13**left = mid - 1 **# line 15**
+right = mid - 1 **# line 13**left = mid + 1 **# line 15**
+right = mid - left **# line 13**left = mid + right **# line 15**
+right = mid - right **# line 13**left = mid + left **# line 15**

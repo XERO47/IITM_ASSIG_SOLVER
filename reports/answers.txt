@@ -1,0 +1,258 @@
+--- Question 1 ---
+<QuestionText>
+Select the correct recurrence relation and time complexity for the given code. T(n)=2T(n−2)+1T(n) = 2T(n-2)+1T(n)=2T(n−2)+1, O(n!)O(n!)O(n!) T(n)=2T(n/2)+nT(n) = 2T(n/2)+nT(n)=2T(n/2)+n, O(nlog⁡n)O(n\log{n})O(nlogn) T(n)=2T(n−1)+nT(n) = 2T(n-1)+nT(n)=2T(n−1)+n, O(2n)O(2^n)O(2n) T(n)=2T(n−1)+1T(n) = 2T(n-1)+1T(n)=2T(n−1)+1, O(2n)O(2^n)O(2n) T(n)=2T(n−1)+1T(n) = 2T(n-1)+1T(n)=2T(n−1)+1, O(n!)O(n!)O(n!) Image Link: https://backend.seek.onlinedegree.iitm.ac.in/21t3_cs2002/assets/img/W2PT1.png
+T(n)=2T(n−2)+1, O(n!)
+T(n)=2T(n/2)+n, O(nlog⁡n)
+T(n)=2T(n−1)+n, O(2n)
+T(n)=2T(n−1)+1, O(2n)
+T(n)=2T(n−1)+1, O(n!)
+Here is the original image:
+<img>
+and here are the different crops of this image to help you see better, use these only as hints:
+<img>
+<img>
+<img>
+<img>
+<img>
+<img>
+<img></QuestionText>
+
+<Options>
+T(n)=2T(n−2)+1, O(n!)
+T(n)=2T(n/2)+n, O(nlog⁡n)
+T(n)=2T(n−1)+n, O(2n)
+T(n)=2T(n−1)+1, O(2n)
+T(n)=2T(n−1)+1, O(n!)
+</Options>
+
+<Answer>
+T(n)=2T(n−1)+1, O(2n)
+</Answer>
+
+<Explanation>
+The given code is a recursive function `fun(n)`.
+Let's analyze the code to determine the recurrence relation and time complexity.
+
+1. **Base Case:** If `n == 0`, the function returns 1. This takes constant time, let's say O(1).
+2. **Recursive Step:** If `n > 0`, the function returns `fun(n-1) + fun(n-1)`. This means the function calls itself twice with input `n-1`. The addition operation takes constant time, O(1).
+
+Based on the recursive calls, we can write the recurrence relation for the time complexity T(n) as follows:
+T(n) = 2T(n-1) + 1  (for n > 0)
+T(0) = 1
+
+This recurrence relation indicates that to solve a problem of size 'n', we need to solve two subproblems of size 'n-1' and perform a constant amount of work (addition and return).
+
+Now let's solve this recurrence relation to find the time complexity. We can use the substitution method or the recursion tree method.
+
+Using Substitution Method:
+T(n) = 2T(n-1) + 1
+T(n-1) = 2T(n-2) + 1
+T(n-2) = 2T(n-3) + 1
+...
+T(1) = 2T(0) + 1
+
+Substitute T(n-1) in T(n):
+T(n) = 2 * (2T(n-2) + 1) + 1 = 2^2 * T(n-2) + 2 + 1
+Substitute T(n-2):
+T(n) = 2^2 * (2T(n-3) + 1) + 2 + 1 = 2^3 * T(n-3) + 2^2 + 2 + 1
+...
+T(n) = 2^k * T(n-k) + 2^(k-1) + ... + 2^1 + 2^0
+
+Let k = n, then T(n-k) = T(0) = 1:
+T(n) = 2^n * T(0) + 2^(n-1) + ... + 2^1 + 2^0
+T(n) = 2^n * 1 + (2^n - 1) / (2 - 1)  (Sum of geometric series)
+T(n) = 2^n + 2^n - 1
+T(n) = 2 * 2^n - 1
+T(n) = 2^(n+1) - 1
+
+The dominant term is 2^(n+1), so the time complexity is O(2^n).
+
+Comparing the derived recurrence relation and time complexity with the given options, the correct option is:
+T(n)=2T(n−1)+1, O(2n)
+
+</Explanation>
+
+<Topics>
+Recurrence Relation, Time Complexity, Recursion, Exponential Time Complexity
+</Topics>
+
+<ImageLink>https://backend.seek.onlinedegree.iitm.ac.in/21t3_cs2002/assets/img/W2PT1.png</ImageLink>
+
+--- Question 2 ---
+<QuestionText>
+What is the time complexity of the given function **fun**? Image Link: https://backend.seek.onlinedegree.iitm.ac.in/21t3_cs2002/assets/img/W2PT2.png
+</QuestionText>
+
+<Options>
+O(n)
+O(log⁡n)
+O(nlog⁡n)
+O(n2)
+</Options>
+
+<Answer>
+O(nlog⁡n)
+</Answer>
+
+<Explanation>
+The given function `fun(n)` has nested loops. Let's analyze them:
+
+1. **Outer loop:** `for i in range(n // 2):`
+   - This loop iterates approximately `n/2` times, which is considered O(n) in terms of time complexity.
+
+2. **Inner loop:** `while j <= n:`
+   - Inside the outer loop, a `while` loop is present.
+   - `j` starts at 2 and is multiplied by 2 in each iteration (`j *= 2`).
+   - The loop continues as long as `j` is less than or equal to `n`.
+   - The values of `j` will be 2, 4, 8, 16, ..., which are powers of 2.
+   - The number of iterations of this loop is logarithmic with respect to `n`. Specifically, it's approximately log base 2 of `n` (log₂(n)). This is because `j` becomes greater than `n` after approximately log₂(n) iterations.
+
+3. **Operation inside the inner loop:** `k += n // 2`
+   - This operation takes constant time, O(1).
+
+Since the outer loop runs O(n) times and the inner loop runs O(log n) times for each iteration of the outer loop, the overall time complexity of the function is the product of these complexities, which is O(n * log n) or O(nlog⁡n).
+
+Therefore, the time complexity of the given function `fun` is O(nlog⁡n).
+</Explanation>
+
+<Topics>
+Time Complexity, Nested Loops, Logarithmic Time Complexity, Linear Time Complexity
+</Topics>
+
+<ImageLink>
+https://backend.seek.onlinedegree.iitm.ac.in/21t3_cs2002/assets/img/W2PT2.png
+</ImageLink>
+
+--- Question 3 ---
+<QuestionText>
+Let f(n)=5n3+n2+6n+2.  Which of the following is/are true?
+f(n) is O(n2)
+f(n) is O(n3)
+f(n) is Ω(n3)
+f(n) is θ(n3)
+f(n) is Ω(n4)
+</QuestionText>
+
+<Options>
+f(n) is O(n2)
+f(n) is O(n3)
+f(n) is Ω(n3)
+f(n) is θ(n3)
+f(n) is Ω(n4)
+</Options>
+
+<Answer>
+f(n) is O(n3)
+f(n) is Ω(n3)
+f(n) is θ(n3)
+</Answer>
+
+<Explanation>
+To determine the correct statements, we analyze the function f(n) = 5n^3 + n^2 + 6n + 2 in terms of Big O, Big Omega, and Big Theta notations. The dominant term in f(n) is 5n^3.
+
+1. **f(n) is O(n^2)**:  This means there exist constants c and n0 such that for all n > n0, f(n) ≤ c * n^2. However, as n grows large, the n^3 term in f(n) dominates, and f(n) grows faster than n^2. Thus, f(n) is not O(n^2).
+
+2. **f(n) is O(n^3)**: This means there exist constants c and n0 such that for all n > n0, f(n) ≤ c * n^3. We can choose c = 5 + 1 + 1 + 1 = 8 (or any value greater than 5). For n ≥ 1, we have n^2 ≤ n^3, 6n ≤ n^3, and 2 ≤ 2n^3. So, f(n) = 5n^3 + n^2 + 6n + 2 ≤ 5n^3 + n^3 + n^3 + 2n^3 = 9n^3.  Alternatively, for n ≥ 1, f(n) = 5n^3 + n^2 + 6n + 2 ≤ 5n^3 + n^3 + 6n^3 + 2n^3 = 14n^3.  Even simpler, for n ≥ 1, n^2 ≤ n^3, 6n ≤ n^3, 2 ≤ 2n^3. Thus f(n) = 5n^3 + n^2 + 6n + 2 ≤ 5n^3 + n^3 + n^3 + n^3 = 8n^3. So we can choose c=8 and n0=1. Therefore, f(n) is O(n^3).
+
+3. **f(n) is Ω(n^3)**: This means there exist constants c and n0 such that for all n > n0, f(n) ≥ c * n^3. We can choose c = 5. For all n ≥ 1, n^2 ≥ 0, 6n ≥ 0, and 2 ≥ 0. So, f(n) = 5n^3 + n^2 + 6n + 2 ≥ 5n^3. Thus, we can choose c=5 and n0=1. Therefore, f(n) is Ω(n^3).
+
+4. **f(n) is θ(n^3)**: This means f(n) is both O(n^3) and Ω(n^3). Since we have shown that f(n) is O(n^3) and f(n) is Ω(n^3), f(n) is θ(n^3).
+
+5. **f(n) is Ω(n^4)**: This means there exist constants c and n0 such that for all n > n0, f(n) ≥ c * n^4.  However, as n grows large, the n^3 term in f(n) dominates, and f(n) grows slower than n^4. Dividing both sides by n^4, we would need 5/n + 1/n^2 + 6/n^3 + 2/n^4 ≥ c. As n approaches infinity, the left side approaches 0. So, for any c > 0, this inequality will not hold for large enough n. Thus, f(n) is not Ω(n^4).
+
+Therefore, the true statements are f(n) is O(n^3), f(n) is Ω(n^3), and f(n) is θ(n^3).
+
+</Topics>
+Big O Notation, Big Omega Notation, Big Theta Notation, Asymptotic Analysis, Complexity Analysis
+</ImageLink>
+<ImageLink></ImageLink>
+
+--- Question 4 ---
+<QuestionText>
+Below code-snippet is a non-recursive implementation of binary search in a sorted list of integers. Which of the options below complete the missing lines 13 and 15 in the above program respectively? Image Link: https://backend.seek.onlinedegree.iitm.ac.in/21t3_cs2002/assets/img/W2PT4.png
+right = mid + 1 **# line 13**left = mid - 1 **# line 15**
+right = mid - 1 **# line 13**left = mid + 1 **# line 15**
+right = mid - left **# line 13**left = mid + right **# line 15**
+right = mid - right **# line 13**left = mid + left **# line 15**
+</QuestionText>
+
+<Options>
+right = mid + 1 **# line 13**left = mid - 1 **# line 15**
+right = mid - 1 **# line 13**left = mid + 1 **# line 15**
+right = mid - left **# line 13**left = mid + right **# line 15**
+right = mid - right **# line 13**left = mid + left **# line 15**
+</Options>
+
+<Answer>
+right = mid - 1 **# line 13**left = mid + 1 **# line 15**
+</Answer>
+
+<Explanation>
+In binary search, when the target value `k` is less than the value at the middle index `L[mid]`, it means the target must be in the left half of the current search range. To narrow down the search to the left half, we need to update the `right` boundary to `mid - 1`.
+
+Conversely, when the target value `k` is greater than `L[mid]`, the target must be in the right half. To search in the right half, we update the `left` boundary to `mid + 1`.
+
+Therefore, line 13 (executed when `k < L[mid]`) should be `right = mid - 1`, and line 15 (executed when `k > L[mid]` in the `else` block) should be `left = mid + 1`.
+</Explanation>
+
+<Topics>
+Binary Search, Algorithm, Python, Code Snippet
+</Topics>
+
+<ImageLink>
+https://backend.seek.onlinedegree.iitm.ac.in/21t3_cs2002/assets/img/W2PT4.png
+</ImageLink>
+
+--- Question 5 ---
+<QuestionText>
+Given below is a Python function to merge two sorted lists of integers. Function **mergeLists()** accepts two lists sorted in ascending order and returns a list which is also sorted in ascending order.  For list A of size **m** and list B of size **n**, what is the time complexity of the above algorithm? Image Link: https://backend.seek.onlinedegree.iitm.ac.in/21t3_cs2002/assets/img/W2PT5.png
+O(m),if  m>nO(n),if  m
+O(m+n)
+O(m∗n)
+O(log m+log n)
+</QuestionText>
+
+<Options>
+O(m),if  m>nO(n),if  m
+O(n),if  m
+O(m+n)
+O(m∗n)
+O(log m+log n)
+</Options>
+
+<Answer>
+O(m+n)
+</Answer>
+
+<Explanation>
+The given Python function `mergeLists(A, B)` merges two sorted lists `A` and `B` of sizes `m` and `n` respectively. Let's analyze the time complexity step by step:
+
+1. **Initialization:** Creating variables `m`, `n`, `mergedList`, `i`, and `j` takes constant time, O(1).
+
+2. **First `while` loop:** `while (i < m and j < n):`
+   - In each iteration of this loop, we compare `A[i]` and `B[j]` and append the smaller element to `mergedList`. Then, we increment either `i` or `j`.
+   - In each step, we are making progress in at least one of the lists (A or B).
+   - In the worst case, this loop runs until we have processed all elements of either list A or list B. The maximum number of iterations for this loop is `min(m, n)`. In the best case it can run up to `m+n` iterations, when elements from both lists are interleaved in the merged list.
+
+3. **Second `while` loop:** `while (i < m):`
+   - This loop executes only after the first `while` loop finishes. It handles any remaining elements in list A.
+   - In the worst case, if all elements of list B were processed in the first loop and some elements of list A are remaining, this loop will iterate at most `m` times.
+
+4. **Third `while` loop:** `while (j < n):`
+   - This loop executes only after the first `while` loop finishes and the second loop (if it ran) also finishes. It handles any remaining elements in list B.
+   - In the worst case, if all elements of list A were processed in the first loop and some elements of list B are remaining, this loop will iterate at most `n` times.
+
+In total, in the worst-case scenario, we might iterate through all elements of both lists A and B. Each element from both lists is considered and appended to the `mergedList` at most once. Therefore, the total number of operations is proportional to the sum of the sizes of the two lists, which is `m + n`.
+
+Thus, the time complexity of the `mergeLists` function is O(m+n).
+
+</Explanation>
+
+<Topics>
+Time Complexity, Merging Sorted Lists, Python, Algorithms
+</Topics>
+
+<ImageLink>
+https://backend.seek.onlinedegree.iitm.ac.in/21t3_cs2002/assets/img/W2PT5.png
+</ImageLink>
+
