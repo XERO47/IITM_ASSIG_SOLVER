@@ -24,8 +24,8 @@ python main.py
 ```
 
 Demo:
+<video src="https://raw.githubusercontent.com/XERO47/IITM_ASSIG_SOLVER/main/assests/solver_demo.mp4" controls="controls" muted="muted" class="d-block rounded-bottom-2 border-top width-fit" style="max-height:640px; min-height: 200px"></video>
 
-[🎥 Watch the Demo Video](assests/solver_demo.mp4)
 
 
 
