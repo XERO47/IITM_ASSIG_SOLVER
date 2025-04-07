@@ -24,8 +24,13 @@ python main.py
 ```
 
 Demo:
-<video src="https://raw.githubusercontent.com/XERO47/IITM_ASSIG_SOLVER/main/assests/solver_demo.mp4" controls="controls" muted="muted" class="d-block rounded-bottom-2 border-top width-fit" style="max-height:640px; min-height: 200px"></video>
+<video src="https://raw.githubusercontent.com/XERO47/IITM_ASSIG_SOLVER/main/assests/solver_demo.mp4" 
+data-canonical-src="https://raw.githubusercontent.com/XERO47/IITM_ASSIG_SOLVER/main/assests/solver_demo.mp4" controls="controls" muted="muted" class="d-block rounded-bottom-2 border-top width-fit" style="max-height:640px; min-height: 200px"></video>
 
+
+
+
+https://github.com/user-attachments/assets/000954d3-dfc7-45bc-bcc5-a25fdf28dd3c
 
 
 
