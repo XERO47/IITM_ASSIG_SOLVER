@@ -19,29 +19,16 @@ Analyzes questions from assignment links (specifically designed for IITM online 
     ```
     *(Note: Ensure you have Google Chrome installed, as the script currently relies on it.)*
 
-4.  **Run the Script:** Execute `main.py` from your terminal:
-    ```bash
-    python main.py
-    ```
-    The script will prompt you for the assignment link. It will then proceed to:
-    *   Extract questions from the link (saving temporary files in `temp/`).
-    *   Use the Gemini LLM to generate a *proposed answer*, a detailed explanation, and related topics for each question, aiding comprehension.
-    *   Download any images associated with questions into the `images/` directory.
-    *   Save the structured, tagged output to `answers.txt`.
-    *   Automatically generate an HTML report (`assignment_report_YYYYMMDD_HHMMSS.html`) in the `reports/` directory for review.
+Run main.py
 
-*Output Files for Review:*
+```bash
+python main.py
+```
 
-*   `answers.txt`: Contains the raw, structured output from the LLM for each question (including the proposed answer, explanation, topics, etc.), using specific XML-like tags (`<QuestionText>`, `<Answer>`, `<Explanation>`, `<Topics>`, `<ImageLink>`). This file is overwritten each time `main.py` runs.
-*   `reports/assignment_report_*.html`: A user-friendly HTML file visualizing the questions, options, the LLM's proposed answer, explanation, topics, and images. Useful for studying and verifying your work. A new report is generated with a timestamp each time `main.py` runs.
-    *   **[View a Sample Report](reports/assignment_report_20250407_220231.html)**
-*   `images/`: Stores images downloaded from questions.
-*   `temp/`: Temporary storage for extracted question text (can likely be ignored or cleared).
+Demo:
 
-*Demo:*
+<video controls src="./assests/solver_demo.mp4" title="Title" ></video>
 
-<video src="https://raw.githubusercontent.com/XERO47/IITM_ASSIG_SOLVER/main/assests/solver_demo.mp4" 
-data-canonical-src="https://raw.githubusercontent.com/XERO47/IITM_ASSIG_SOLVER/main/assests/solver_demo.mp4" controls="controls" muted="muted" class="d-block rounded-bottom-2 border-top width-fit" style="max-height:640px; min-height: 200px"></video>
 
 All contributions are welcome.
 
